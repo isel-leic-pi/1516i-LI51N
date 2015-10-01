@@ -1,4 +1,4 @@
-
+"use strict";
 
 (function() {
 
@@ -22,7 +22,7 @@
     showAllArguments("Jonas", 17, 8, "golos");
 
     function showAllArguments() {
-        console.log("--------version 0-----------")
+        console.log("--------version 0-----------");
         for (var i = 0; i < arguments.length; ++i) {
             console.log("Arguments[" + i + "] = " + arguments[i]);
         }
@@ -30,15 +30,14 @@
 
 
     function showAllArguments() {
-        console.log("--------version 1-----------")
+        console.log("--------version 1-----------");
         console.log(x);
-        console.log(y);
+
         for (var i = 0; i < arguments.length; ++i) {
-            console.log("Arguments[" + i + "] = " + arguments[i]);
+            console.log(`Arguments[${i}] = ${arguments[i]}`);
         }
 
-        x = 10;
-
+        let x = 10;
         console.log(x);
     }
 
