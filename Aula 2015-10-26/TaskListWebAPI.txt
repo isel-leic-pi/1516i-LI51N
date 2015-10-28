@@ -1,0 +1,7 @@
+HTTP Method     |    URI						| Description
+GET			    |  	/tasks						| Gets a representation for all tasks
+GET			    |	/tasks/:id (e.g. /tasks/3)	| Gets a representation for the task with the given id
+DELETE			|	/tasks/:id (e.g. /tasks/3)	| Deletes the task resource with the given id 
+PUT				|   /tasks/:id (e.g. /tasks/3)  | Updates the task with the given id with the enclosed entity 
+POST			|   /tasks/					    | Creates a new task with the encolsed entity
+
