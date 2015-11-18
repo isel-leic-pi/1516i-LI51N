@@ -1,0 +1,8 @@
+
+{
+  'fapi': {
+    'hostname': "api.football-data.org",
+    'path': "/v1";
+  }
+
+}
