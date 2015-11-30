@@ -1,0 +1,6 @@
+METHOD  URI                 Description
+GET     /tasks              Returns all tasks
+GET     /tasks/{taskId}     Returns the details of the task with id
+DELETE  /tasks/{taskId}     Deletes the task with the given taskId
+PUT     /tasks/{taskId}     Updates the task with the given taskId
+POST    /tasks              Creates a new Task
