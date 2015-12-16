@@ -1,5 +1,5 @@
 /**
- *
+ * 
  * @type {*[]}
  */
 
@@ -21,6 +21,12 @@ var tasks = [
         "description": "Have fun",
         "dueDate": "never",
         "status": "PROGRESS"
+    },
+    {
+        "_id": "4",
+        "description": "Climb Everest",
+        "dueDate": "someday",
+        "status": "TODO"
     }
 ];
 
