@@ -1,0 +1,24 @@
+<div class="panel {{statusPanelClass status}}" id="{{_id}}">
+
+    <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="true">
+        Actions
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a class="status" href="/tasks/{{_id}}">PROGRESS</a></li>
+        <li><a class="status" href="/tasks/{{_id}}">DONE</a></li>
+        <li><a class="delete" href="/tasks/{{_id}}">Delete</a></li>
+    </ul>
+    </div>
+
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <span title="{{status}}" class="glyphicon {{statusIconClass status}}"/> {{description}}
+        </h3>
+    </div>
+</div>
+
+
+
