@@ -35,30 +35,37 @@ passport.deserializeUser(function(user, done) {
 const tasksModel = require("../app-logic/tasks-model");
 
 
-function login(req, rsp) {
-    rsp.render("login");
-
-}
-
 
 var express = require('express');
 var router = express.Router();
 
 
+
+
+router.get('/login', function(req, res) {
+    debug("error flash session: %j", req.session.flash)
+    let error = req.flash("error");
+    debug("error flash session after: %j", req.session.flash)
+    debug("error flash: %j", error);
+
+    res.render('login', { error: error});
+});
+
 router.post("/login",
     passport.authenticate('local',
         { successRedirect: '/tasks',  failureRedirect: '/login', failureFlash: true }),
-        function(req, res) {
-            // If this function gets called, authentication was successful.
-            // `req.user` contains the authenticated user.
-            debug("user %j is logged in", req.user);
-        }
+    function(req, res, next) {
+        // If this function gets called, authentication was successful.
+        // `req.user` contains the authenticated user.
+        debug("user %j is logged in", req.user);
+        next();
+    }
 );
 
-router.get('/login', function(req, res, next) {
-    res.render('login');
+router.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/login');
 });
-
 
 
 module.exports = router;

@@ -8,6 +8,7 @@
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/stylesheets/tasks.css" rel="stylesheet"/>
 
 
     {{#block "head"}}
@@ -16,24 +17,40 @@
 
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-1top" role="navigation">
-    <div class="container">
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
         <div class="navbar-header">
-            <p class="navbar-text navbar-right">Signed in as {{@req.user.name}} </p>
+            <a class="navbar-brand" href="/tasks">
+                <img class="img-circle" src="/images/tasks-pic.png" alt="Tasks">
+            </a>
         </div>
+
+        {{#if user }}
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        Signed in as {{user.name}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        {{/if}}
+    </div>
     </div>
 </nav>
 <div class="container">
     <div class="row row-content">
-            <div class="col-md-12">
+        <div class="col-md-12">
             {{{ body }}}
         </div>
     </div>
 </div>
 <footer>
-{{#block "footer"}}
-    <!--Footer-->
-{{/block}}
+    {{#block "footer"}}
+        <!--Footer-->
+    {{/block}}
 </footer>
 
 
@@ -41,5 +58,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/javascripts/jquery/jquery.js"></script>
 </body>
 </html>

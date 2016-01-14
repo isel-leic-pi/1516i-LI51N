@@ -1,54 +1,48 @@
 
+<div class="col-md-8">
+    <h1>{{title}}</h1>
+    <ul id="tasks">
+        {{#each tasks}}
+            <!--<div class="panel {{statusPanelClass status}}">-->
+                <!--<div class="panel-heading">-->
 
+                    <!--<h3 class="panel-title">-->
+                        <!--<span title="{{status}}" class="glyphicon {{statusIconClass status}}"/> {{description}}-->
+                    <!--</h3>-->
+                <!--</div>-->
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <h1>{{title}}</h1>
-            <ul id="tasks">
-                {{#each tasks}}
-                    <!--<div class="panel {{statusPanelClass status}}">-->
-                        <!--<div class="panel-heading">-->
+            <!--</div>-->
+            {{> task }}
+        {{/each}}
 
-                            <!--<h3 class="panel-title">-->
-                                <!--<span title="{{status}}" class="glyphicon {{statusIconClass status}}"/> {{description}}-->
-                            <!--</h3>-->
-                        <!--</div>-->
+    </ul>
+</div>
+<div class="col-md-2">
 
-                    <!--</div>-->
-                    {{> task }}
-                {{/each}}
+    <form method="POST" id="task-form" action="/tasks" class="form-horizontal">
+        <fieldset>
+            <legend>New Task:</legend>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description"  class="form-control"placeholder="Insert task description here" required>
+            </div>
 
-            </ul>
-        </div>
-        <div class="col-md-2">
+            <div class="form-group">
+                <label for="status">Initial Status:</label>
+                <select name="status" id="status" class="form-control">
+                    <option value="PROGRESS">PROGRESS</option>
+                    <option value="DONE">DONE</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="duedate">Due Date:</label>
+                <input type="date" id="duedate" name="duedate" class="form-control" da>
+            </div>
 
-            <form method="POST" id="task-form" action="/tasks" class="form-horizontal">
-                <fieldset>
-                    <legend>New Task:</legend>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <input type="text" id="description" name="description"  class="form-control"placeholder="Insert task description here" required>
-                    </div>
+        </fieldset>
+        <input type="submit" id="submit-task" value="Create new Task" class="btn btn-primary"/>
+    </form>
 
-                    <div class="form-group">
-                        <label for="status">Initial Status:</label>
-                        <select name="status" id="status" class="form-control">
-                            <option value="PROGRESS">PROGRESS</option>
-                            <option value="DONE">DONE</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="duedate">Due Date:</label>
-                        <input type="date" id="duedate" name="duedate" class="form-control" da>
-                    </div>
-
-                </fieldset>
-                <input type="submit" id="submit-task" value="Create new Task" class="btn btn-primary"/>
-            </form>
-
-        </div>
-    </div>
 </div>
 
 <script src="/javascripts/tasks.js" type="text/javascript">

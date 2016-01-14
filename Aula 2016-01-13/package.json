@@ -4,7 +4,7 @@
   "description": "",
   "main": "tasks-server.js",
   "scripts": {
-    "start": "DEBUG=tasks-server,users-controller nodemon tasks-server.js",
+    "start": "DEBUG=tasks-server,tasks-controller nodemon tasks-server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
